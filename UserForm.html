@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Detail Form</title>
+  </head>
+  <body>
+    <section>
+      <form onsubmit="submitForm()" class="form-input" novalidate>
+        <table id="main-table">
+          <caption>
+            <h1>HTML 5 Form</h1>
+          </caption>
+          <tr>
+            <td class="label"><label for="name">Name:</label></td>
+            <td class="input">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter name"
+              /><br />
+              <small id="errormsg"
+                >Enter 1st character in uppercase, min 3 character</small
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><label for="password">Password:</label></td>
+            <td class="input">
+              <input
+                type="password"
+                name="password"
+                id="pass"
+                placeholder="Enter password"
+              /><br />
+              <small id="errorpass"
+                >Must have 1 special character,digit and uppercase</small
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><label for="email">Email:</label></td>
+            <td class="input">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter email - abc@def.com"
+              /><br />
+              <small id="mailerror">eg abc@def.com</small>
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><label for="url">Url:</label></td>
+            <td class="input">
+              <input
+                type="url"
+                name="url"
+                id="url"
+                placeholder="Enter url www.abc.com"
+              /><br />
+              <small id="urlerror">url incorrect</small>
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><label for="tel">Mobile:</label></td>
+            <td class="input">
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                placeholder="Enter 9digit phone"
+              /><br />
+              <small id="telerror"
+                >should be 10 digits, start with non zero</small
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><label for="date">Date:</label></td>
+            <td class="input">
+              <input type="date" name="date" id="date" /><br />
+              <small id="dateerror">error message</small>
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><label for="salary">Salary:</label></td>
+            <td class="input">
+              <input
+                type="range"
+                name="salary"
+                id="salary"
+                min="30000"
+                max="50000"
+                step="100"
+                value="40000"
+              /><br />
+              <span id="output" for="salary">40000</span>
+            </td>
+          </tr>
+        </table>
+        <button type="submit" id="submit">Submit</button>
+      </form>
+    </section>
+    <div id="modal">
+      <span id="data"></span>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
