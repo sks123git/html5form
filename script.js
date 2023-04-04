@@ -5,7 +5,7 @@ const url = document.querySelector('#url');
 const tel = document.querySelector('#tel');
 const date = document.querySelector('#date');
 const salary = document.querySelector('#salary');
-window.addEventListener;
+let employeePayrollList = [];
 
 const nameError = document.querySelector('#errormsg');
 username.addEventListener('input', function val() {
@@ -72,15 +72,30 @@ salary.addEventListener('input', () => {
 
 const btn = document.querySelector('#submit');
 function submitForm() {
-  localStorage.setItem('name', JSON.stringify(username.value));
-  localStorage.setItem('password', JSON.stringify(password.value));
-  localStorage.setItem('email', JSON.stringify(email.value));
-  localStorage.setItem('url', JSON.stringify(url.value));
-  localStorage.setItem('tel', JSON.stringify(tel.value));
-  localStorage.setItem('date', JSON.stringify(date.value));
-  localStorage.setItem('salary', JSON.stringify(salary.value));
-}
+  // //Adding data from localstorage to array
+  if (window.localStorage.key(0) !== null) {
+    employeePayrollList = JSON.parse(
+      window.localStorage.getItem('employeeData')
+    );
+  }
 
-for (let index = 0; index < localStorage.length; index++) {
-  console.log(localStorage.getItem(localStorage.key(index)));
+  let newPerson = {
+    name: username.value,
+    password: password.value,
+    email: email.value,
+    url: url.value,
+    tel: tel.value,
+    date: date.value,
+    salary: salary.value,
+  };
+
+  employeePayrollList.push(newPerson);
+
+  window.localStorage.setItem(
+    'employeeData',
+    JSON.stringify(employeePayrollList)
+  );
 }
+// for (let index = 0; index < localStorage.length; index++) {
+//   console.log(localStorage.getItem(localStorage.key(index)));
+// }
